@@ -1,7 +1,7 @@
 import React from "react";
-import { FaRegHeart } from "react-icons/fa";
-import { FaEdit } from "react-icons/fa";
+import { FaRegHeart, FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { IoAddCircleSharp } from "react-icons/io5";
 
 const Cards = () => {
   const data = [
@@ -49,6 +49,10 @@ const Cards = () => {
           </div>
         </div>
       ))}
+      <div className="flex flex-col justify-center items-center bg-gray-500 rounded-sm p-4 text-gray-300 hover:scale-105 hover:cursor-pointer transition-all duration-300">
+        <IoAddCircleSharp className="text-5xl" />
+        <h2 className="text-2xl mt-4">Add Task</h2>
+      </div>
     </div>
   );
 };
