@@ -1,7 +1,7 @@
 import React from "react";
 import { FaRegHeart } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
-import { FaArrowTurnUp } from "react-icons/fa6";
+import { MdDelete } from "react-icons/md";
 
 const Cards = () => {
   const data = [
@@ -43,7 +43,7 @@ const Cards = () => {
                 <FaEdit />
               </button>
               <button>
-                <FaArrowTurnUp />
+                <MdDelete />
               </button>
             </div>
           </div>
