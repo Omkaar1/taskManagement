@@ -1,16 +1,18 @@
-import express from "express";
-// import dotenv from "./env";
+import express, { json } from "express";
+import connectDB from "./connectDB.js";
+import "dotenv/config";
+import cors from "cors";
 const app = express();
-
-// dotenv.config({
-//   path: "/.env",
+import UserAPI from "./routes/user.js";
+app.use(cors());
+app.use(express.json())
+app.use("/api/v1", UserAPI); //Localhost:8080/api/v1/sign-in
+// app.use("/", (req, res) => {
+//   res.send("Hello from backend");
 // });
-app.use("/", (req, res) => {
-  res.send("Hello from backend");
-});
 
-// const port = process.env.PORT;
-// console.log(port);
-app.listen(8080, () => {
-  console.log(`app is listing on port 8080`);
+connectDB();
+const port = process.env.PORT;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
