@@ -1,15 +1,17 @@
-import express, { json } from "express";
+import express from "express";
 import connectDB from "./connectDB.js";
 import "dotenv/config";
 import cors from "cors";
-const app = express();
+
 import UserAPI from "./routes/user.js";
+import TaskAPI from "./routes/task.js";
+
+const app = express();
 app.use(cors());
-app.use(express.json())
-app.use("/api/v1", UserAPI); //Localhost:8080/api/v1/sign-in
-// app.use("/", (req, res) => {
-//   res.send("Hello from backend");
-// });
+app.use(express.json());
+
+app.use("/api/v1", UserAPI);
+app.use("/api/v2", TaskAPI);
 
 connectDB();
 const port = process.env.PORT;
